@@ -108,9 +108,9 @@ if uploaded_file is not None:
 
 if st.session_state.get("processed_data"):
     st.subheader("📑 Structured Medical Information")
-    st.json(st.session_state.processed_data["Structured Medical Information"], expanded=True)
+    st.write(st.session_state.processed_data["Structured Medical Information"], expanded=True)
     st.subheader("📌 Additional Insights")
-    st.json(st.session_state.processed_data["Additional Insights"], expanded=True)
+    st.write(st.session_state.processed_data["Additional Insights"], expanded=True)
 
     # Download Button
     def generate_pdf(data):
