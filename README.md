@@ -87,7 +87,7 @@ SurgiNote AI is an intelligent medical documentation tool that transcribes, extr
 ## File Structure
 
 ```
-📂 surginote-ai
+📂 HealthcareIIITSriCity
 │── app.py                   # Main application (Streamlit UI)
 │── ragEncyclopedia.py       # RAG-based AI retrieval
 │── notify_emergency.py      # Emergency alert system
