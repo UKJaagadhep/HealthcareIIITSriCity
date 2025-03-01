@@ -67,7 +67,8 @@ SurgiNote AI is an intelligent medical documentation tool that transcribes, extr
 - **Option 1**: Upload a `.txt` file containing a medical transcript.
 - **Option 2**: Click the "Start Recording Audio" button to transcribe in real-time.
 
-🖼️ *Insert image of the UI showing file upload and audio recording button*
+🖼️ ![image](https://github.com/user-attachments/assets/3c791257-afae-4870-864f-6deb774c1c9a)
+
 
 ### 2️⃣ AI Processing & Insights
 
@@ -80,7 +81,10 @@ SurgiNote AI is an intelligent medical documentation tool that transcribes, extr
 
 - Once processed, download a structured report in PDF format.
 
-🖼️ *Insert image showing the download button and sample PDF report*
+🖼️ ![image](https://github.com/user-attachments/assets/ce4c5125-d8a8-4338-a2f9-bd13a890f9a2)
+🖼️ ![image](https://github.com/user-attachments/assets/7e21b3dd-c420-4413-a646-a3ff723b27f6)
+
+
 
 ---
 
