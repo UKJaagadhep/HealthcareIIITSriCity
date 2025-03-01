@@ -16,14 +16,19 @@ SurgiNote AI is an intelligent medical documentation tool that transcribes, extr
 - ⚠️ **Emergency Notification System**
 
 ---
-
 ## Tech Stack
 
-- **Frontend**: Streamlit (Python)
-- **Speech-to-Text**: Azure Cognitive Services
-- **AI Processing**: Groq LLM (Llama3-8B-8192), LangChain
-- **Vector Database**: Pinecone
-- **Backend**: Python
+**Speech Recognition**: Azure Cognitive Services Speech SDK
+
+**Content Extraction**: GROQ
+
+**Vector Search (RAG)**: Pinecone (Cloud), LangChain
+
+**UI**: HTML, CSS, Streamlit
+
+**Emergency Notification**: Socket
+
+**PDF Download**: ReportLab
 
 ---
 
