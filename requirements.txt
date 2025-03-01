@@ -1,6 +1,7 @@
 streamlit
 requests
 langchain
+langchain-community
 pinecone-client
 sentence-transformers
 azure-cognitiveservices-speech
