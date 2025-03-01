@@ -13,6 +13,7 @@ warnings.filterwarnings("ignore")
 
 PINECONE_API_KEY = '5965fff2-b55f-4f7c-80ad-2dea835b8edd'
 GROQ_API_KEY = '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'
+os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 
 #custom GroqLLM class
 class GroqLLM(LLM):
