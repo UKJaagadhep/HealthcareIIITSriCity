@@ -1,0 +1,7 @@
+streamlit
+requests
+langchain
+pinecone-client
+sentence-transformers
+azure-cognitiveservices-speech
+reportlab
