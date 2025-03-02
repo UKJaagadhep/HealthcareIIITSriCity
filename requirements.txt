@@ -8,3 +8,4 @@ azure-cognitiveservices-speech
 reportlab
 huggingface_hub
 python-dotenv
+langchain-pinecone
