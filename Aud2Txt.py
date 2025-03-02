@@ -5,7 +5,7 @@ import asyncio
 from notify_emergency import notifyEmerg
 
 class Transcription:
-    def _init_(self):
+    def __init__(self):
         try:
             self.AZURE_SPEECH_KEY = "447qXmyKhJSXcdn4IWNmaMJ5zyyifVhiFrVgxafGMdbpY163ikL4JQQJ99BCACHYHv6XJ3w3AAAAACOGBIP4"
             self.AZURE_SERVICE_REGION = "eastus2"
