@@ -86,7 +86,8 @@ class RAGGale():
         pc = pinecone.Pinecone(api_key=PINECONE_API_KEY) #This is the corrected line.
         #Corrected pinecone connection.
         index = pc.Index(index_name) #Use the pc instance to access index.
-        self.docsearch = Pinecone(index, embeddings.embed_query, "_medical_")
+        #self.docsearch = Pinecone(index, embeddings.embed_query, "_medical_")
+        self.docsearch = Pinecone.from_existing_index(index_name, embeddings, namespace="_medical_")
 
     def retrieve(self, user_input):
         # RetrievalQA chain with Groq LLM
