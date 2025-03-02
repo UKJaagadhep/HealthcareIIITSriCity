@@ -9,6 +9,7 @@ import os
 import warnings
 import requests
 from typing import Optional, List
+import pinecone #Import pinecone
 warnings.filterwarnings("ignore")
 
 # Load environment variables
@@ -24,7 +25,7 @@ class GroqLLM(LLM):
     """
     api_key: str
     model: str
-    endpoint: str = "https://api.groq.com/openai/v1/chat/completions"  
+    endpoint: str = "https://api.groq.com/openai/v1/chat/completions"
 
     @property
     def _llm_type(self):
@@ -42,7 +43,7 @@ class GroqLLM(LLM):
             "model": self.model,
         }
         response = requests.post(
-            self.endpoint,  
+            self.endpoint,
             headers=headers,
             json=payload
         )
@@ -52,10 +53,10 @@ class GroqLLM(LLM):
             raise ValueError(f"Groq API request failed: {response.text}")
         data = response.json()
         return data["choices"][0]["message"]["content"]
-    
+
 class RAGGale():
     def __init__(self, GROQ_API_KEY):
-        GROQ_MODEL = "llama3-8b-8192"  
+        GROQ_MODEL = "llama3-8b-8192"
         self.llm = GroqLLM(
             api_key=GROQ_API_KEY,
             model=GROQ_MODEL
@@ -70,7 +71,7 @@ class RAGGale():
         Question : {question}
 
         Provide a comprehensive response, including all relevant details, explanations, and necessary background information. Use structured formatting if needed.
-        Only have new information that is not already in the user input. The information must be from our database. 
+        Only have new information that is not already in the user input. The information must be from our database.
 
         Detailed answer :
         """
@@ -81,11 +82,11 @@ class RAGGale():
         embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
         index_name = "chatbot-flash"
-        self.docsearch = Pinecone.from_existing_index(
-            index_name=index_name,
-            embedding=embeddings,
-            namespace="_medical_"
-        )
+        #Initialize pinecone.
+        pc = pinecone.Pinecone(api_key=PINECONE_API_KEY) #This is the corrected line.
+        #Corrected pinecone connection.
+        index = pc.Index(index_name) #Use the pc instance to access index.
+        self.docsearch = Pinecone(index, embeddings.embed_query, "_medical_")
 
     def retrieve(self, user_input):
         # RetrievalQA chain with Groq LLM
