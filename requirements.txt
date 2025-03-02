@@ -6,6 +6,5 @@ pinecone-client
 sentence-transformers
 azure-cognitiveservices-speech
 reportlab
-pyaudio
 huggingface_hub
 python-dotenv
