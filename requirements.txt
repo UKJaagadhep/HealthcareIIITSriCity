@@ -8,3 +8,15 @@ azure-cognitiveservices-speech
 reportlab
 langchain-pinecone
 pyaudio
+streamlit
+reportlab
+ragEncyclopedia
+content_extraction
+Aud2Txt
+requests
+socket
+time
+huggingface_hub
+langchain
+python-dotenv
+pinecone-client
