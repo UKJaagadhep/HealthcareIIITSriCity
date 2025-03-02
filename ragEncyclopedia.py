@@ -85,11 +85,11 @@ class RAGGale():
         #Initialize pinecone.
         pc = pinecone.Pinecone(api_key=PINECONE_API_KEY) #This is the corrected line.
         #Corrected pinecone connection.
-        index = pc.Index(index_name) #Use the pc instance to access index.
-        #self.docsearch = Pinecone(index, embeddings.embed_query, "_medical_")
-        self.docsearch = Pinecone.from_existing_index(index_name, 
-                                                      embeddings, 
-                                                      namespace="_medical_",)
+        '''index_info = pc.describe_index(index_name)
+        host_url = index_info["host"]
+        index = pinecone.Index(index_name, host="https://chatbot-flash-2mcydbp.svc.aped-4627-b74a.pinecone.io") #Use the pc instance to access index.
+        #self.docsearch = Pinecone(index, embeddings.embed_query, "_medical_")'''
+        self.docsearch = Pinecone.from_existing_index(index_name, embeddings, namespace="_medical_",)
 
 
     def retrieve(self, user_input):
