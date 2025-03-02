@@ -2,16 +2,10 @@ streamlit
 requests
 langchain
 langchain-community
-pinecone
+pinecone-client
 sentence-transformers
 azure-cognitiveservices-speech
 reportlab
-langchain-pinecone
 pyaudio
-requests
-socket
-time
 huggingface_hub
 python-dotenv
-pinecone-client
-threading
