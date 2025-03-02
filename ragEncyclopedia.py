@@ -11,11 +11,13 @@ import requests
 from typing import Optional, List
 warnings.filterwarnings("ignore")
 
-PINECONE_API_KEY = '5965fff2-b55f-4f7c-80ad-2dea835b8edd'
-GROQ_API_KEY = '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'
-os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
+# Load environment variables
+load_dotenv()
 
-#custom GroqLLM class
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+GROQ_API_KEY = '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'
+
+# Custom GroqLLM class
 class GroqLLM(LLM):
     """
     Custom LangChain LLM wrapper for Groq's API.
@@ -59,7 +61,7 @@ class RAGGale():
             model=GROQ_MODEL
         )
 
-        #prompt template
+        # Prompt template
         prompt_template = """
         Use the following pieces of information to answer the user's question.
         If you don't know the answer, just say that you don't know, don't try to make up an answer.
@@ -72,7 +74,6 @@ class RAGGale():
 
         Detailed answer :
         """
-
 
         prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
         self.chain_type_kwargs = {"prompt": prompt}
@@ -87,7 +88,7 @@ class RAGGale():
         )
 
     def retrieve(self, user_input):
-        #RetrievalQA chain with Groq LLM
+        # RetrievalQA chain with Groq LLM
         qa = RetrievalQA.from_chain_type(
             llm=self.llm,
             chain_type="stuff",
