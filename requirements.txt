@@ -2,7 +2,7 @@ streamlit
 requests
 langchain
 langchain-community
-pinecone-client
+pinecone
 sentence-transformers
 azure-cognitiveservices-speech
 reportlab
