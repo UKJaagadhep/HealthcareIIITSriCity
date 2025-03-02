@@ -75,16 +75,16 @@ SurgiNote AI is an intelligent medical documentation tool that transcribes, extr
 - Extracts structured medical information.
 - Retrieves additional insights using RAG (LLM-powered).
 
-🖼️ *Insert image showing extracted medical data and AI insights*
+🖼️ ![image](https://github.com/user-attachments/assets/319c68e6-9afc-4852-a1da-2967505345c4)
+🖼️ ![image](https://github.com/user-attachments/assets/d012ce81-45c1-4498-a174-cf8e353c1c1e)
+🖼️ ![image](https://github.com/user-attachments/assets/7cc05f17-350d-447b-84e8-c460a5da59df)
+
+
+
 
 ### 3️⃣ Download PDF Report
 
 - Once processed, download a structured report in PDF format.
-
-🖼️ ![image](https://github.com/user-attachments/assets/ce4c5125-d8a8-4338-a2f9-bd13a890f9a2)
-🖼️ ![image](https://github.com/user-attachments/assets/7e21b3dd-c420-4413-a646-a3ff723b27f6)
-
-
 
 ---
 
