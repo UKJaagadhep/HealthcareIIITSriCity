@@ -55,7 +55,7 @@ class Transcription:
         return " ".join(transcribed_text)  # Return final transcription
 
 # Run Transcription
-if _name_ == "_main_":
+if __name__ == "__main__":
     transcriber = Transcription()
     transcript = transcriber.real_time_transcription()
     print("\nFinal Transcription:\n", transcript)
