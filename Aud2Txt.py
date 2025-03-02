@@ -1,4 +1,3 @@
-print("Azure Speech SDK is installed and working!")
 import azure.cognitiveservices.speech as speechsdk
 import time
 import threading
