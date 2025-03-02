@@ -1,5 +1,5 @@
-import azure.cognitiveservices.speech as speechsdk
 print("Azure Speech SDK is installed and working!")
+import azure.cognitiveservices.speech as speechsdk
 import time
 import threading
 from notify_emergency import notifyEmerg
