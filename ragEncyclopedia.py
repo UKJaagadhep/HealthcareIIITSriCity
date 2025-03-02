@@ -3,6 +3,7 @@ from langchain.prompts import PromptTemplate
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.vectorstores import Pinecone
+from langchain_pinecone import PineconeVectorStore
 from langchain.llms.base import LLM
 from dotenv import load_dotenv
 import os
@@ -10,6 +11,7 @@ import warnings
 import requests
 from typing import Optional, List
 import pinecone #Import pinecone
+from pinecone.grpc import PineconeGRPC as Pinecone_
 warnings.filterwarnings("ignore")
 
 # Load environment variables
@@ -83,13 +85,18 @@ class RAGGale():
 
         index_name = "chatbot-flash"
         #Initialize pinecone.
-        pc = pinecone.Pinecone(api_key=PINECONE_API_KEY) #This is the corrected line.
+        pc = Pinecone_(api_key=PINECONE_API_KEY)
+        #pc = pinecone.Pinecone(api_key=PINECONE_API_KEY) #This is the corrected line.
         #Corrected pinecone connection.
         '''index_info = pc.describe_index(index_name)
         host_url = index_info["host"]
         index = pinecone.Index(index_name, host="https://chatbot-flash-2mcydbp.svc.aped-4627-b74a.pinecone.io") #Use the pc instance to access index.
         #self.docsearch = Pinecone(index, embeddings.embed_query, "_medical_")'''
-        self.docsearch = Pinecone.from_existing_index(index_name, embeddings, namespace="_medical_",)
+        self.docsearch = PineconeVectorStore(
+            index_name=index_name,
+            embedding=embeddings,
+            namespace="_medical_"
+        )
 
 
     def retrieve(self, user_input):
