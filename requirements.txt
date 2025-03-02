@@ -9,3 +9,9 @@ reportlab
 huggingface_hub
 python-dotenv
 langchain-pinecone
+google-api-python-client 
+google-auth 
+google-auth-oauthlib 
+google-auth-httplib2 
+grpcio 
+protobuf
